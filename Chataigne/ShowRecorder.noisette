@@ -1,0 +1,446 @@
+{
+  "metaData": {
+    "version": "1.10.3",
+    "versionNumber": 68099
+  },
+  "projectSettings": {
+    "containers": {
+      "dashboardSettings": {
+        "parameters": [
+          {
+            "value": "",
+            "controlAddress": "/showDashboardOnStartup",
+            "enabled": false
+          }
+        ]
+      },
+      "customDefinitions": {
+      }
+    }
+  },
+  "dashboardManager": {
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  },
+  "parrots": {
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  },
+  "layout": {
+    "mainLayout": {
+      "type": 1,
+      "width": 1920,
+      "height": 989,
+      "direction": 2,
+      "shifters": [
+        {
+          "type": 1,
+          "width": 1920,
+          "height": 989,
+          "direction": 2,
+          "shifters": [
+            {
+              "type": 1,
+              "width": 1920,
+              "height": 570,
+              "direction": 1,
+              "shifters": [
+                {
+                  "type": 1,
+                  "width": 307,
+                  "height": 570,
+                  "direction": 2,
+                  "shifters": [
+                    {
+                      "type": 0,
+                      "width": 307,
+                      "height": 292,
+                      "currentContent": "Modules",
+                      "tabs": [
+                        {
+                          "name": "Modules"
+                        }
+                      ]
+                    },
+                    {
+                      "type": 0,
+                      "width": 307,
+                      "height": 272,
+                      "currentContent": "Custom Variables",
+                      "tabs": [
+                        {
+                          "name": "Custom Variables"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 1173,
+                  "height": 570,
+                  "currentContent": "State Machine",
+                  "tabs": [
+                    {
+                      "name": "State Machine"
+                    },
+                    {
+                      "name": "Dashboard"
+                    },
+                    {
+                      "name": "Module Router"
+                    },
+                    {
+                      "name": "Morpher"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 428,
+                  "height": 570,
+                  "currentContent": "Inspector",
+                  "tabs": [
+                    {
+                      "name": "Inspector"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": 1,
+              "width": 1920,
+              "height": 412,
+              "direction": 1,
+              "shifters": [
+                {
+                  "type": 0,
+                  "width": 178,
+                  "height": 412,
+                  "currentContent": "Sequences",
+                  "tabs": [
+                    {
+                      "name": "Sequences"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 1256,
+                  "height": 412,
+                  "currentContent": "Sequence Editor",
+                  "tabs": [
+                    {
+                      "name": "Sequence Editor"
+                    }
+                  ]
+                },
+                {
+                  "type": 0,
+                  "width": 474,
+                  "height": 412,
+                  "currentContent": "Logger",
+                  "tabs": [
+                    {
+                      "name": "Help"
+                    },
+                    {
+                      "name": "Logger"
+                    },
+                    {
+                      "name": "Warnings"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "windows": null
+  },
+  "modules": {
+    "items": [
+      {
+        "niceName": "OSCQuery",
+        "type": "OSCQuery",
+        "scripts": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "params": {
+          "parameters": [
+            {
+              "value": "TD OSC Query Server",
+              "controlAddress": "/serverName"
+            },
+            {
+              "value": true,
+              "controlAddress": "/isConnected"
+            }
+          ],
+          "containers": {
+            "output": {
+              "parameters": [
+                {
+                  "value": "127.0.0.1",
+                  "controlAddress": "/remoteHost"
+                },
+                {
+                  "value": 9000,
+                  "hexMode": false,
+                  "controlAddress": "/remotePort"
+                },
+                {
+                  "value": 9000,
+                  "hexMode": false,
+                  "controlAddress": "/customOSCPort",
+                  "enabled": false
+                },
+                {
+                  "value": 9000,
+                  "hexMode": false,
+                  "controlAddress": "/customWebsocketPort",
+                  "enabled": false
+                }
+              ]
+            }
+          }
+        },
+        "templates": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "values": {
+          "containers": {
+            "Particles_Long": {
+              "containers": {
+                "Transform": {
+                  "parameters": [
+                    {
+                      "value": 1.0,
+                      "controlAddress": "/Birthrate"
+                    }
+                  ],
+                  "owned": true,
+                  "niceName": "Transform"
+                }
+              },
+              "owned": true,
+              "niceName": "Particles_Long"
+            }
+          }
+        },
+        "treeData": {
+          "DESCRIPTION": "TD OSC Query Server",
+          "CONTENTS": {
+            "Particles_Long": {
+              "CONTENTS": {
+                "Transform": {
+                  "CONTENTS": {
+                    "T": {
+                      "TYPE": "f",
+                      "DESCRIPTION": "T",
+                      "FULL_PATH": "/Particles_Long/Transform/T",
+                      "VALUE": [
+                        0.0
+                      ],
+                      "RANGE": [
+                        {
+                          "MAX": 1.0,
+                          "MIN": 0.0
+                        }
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Radialstrength": {
+                      "TYPE": "f",
+                      "DESCRIPTION": "Radialstrength",
+                      "FULL_PATH": "/Particles_Long/Transform/Radialstrength",
+                      "VALUE": [
+                        0.0
+                      ],
+                      "RANGE": [
+                        {
+                          "MAX": 10.0,
+                          "MIN": -10.0
+                        }
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Birthrate": {
+                      "TYPE": "f",
+                      "DESCRIPTION": "Birthrate",
+                      "FULL_PATH": "/Particles_Long/Transform/Birthrate",
+                      "VALUE": [
+                        1000.0
+                      ],
+                      "RANGE": [
+                        {
+                          "MAX": 1.0,
+                          "MIN": 0.0
+                        }
+                      ],
+                      "ACCESS": 3
+                    },
+                    "Reset": {
+                      "TYPE": "N",
+                      "DESCRIPTION": "Reset",
+                      "FULL_PATH": "/Particles_Long/Transform/Reset",
+                      "ACCESS": 3
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "hasListenExtension": true
+      }
+    ],
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  },
+  "customVariables": {
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  },
+  "states": {
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0,
+    "transitions": {
+      "hideInEditor": true,
+      "viewOffset": [
+        0,
+        0
+      ],
+      "viewZoom": 1.0
+    },
+    "comments": {
+      "hideInEditor": true,
+      "viewOffset": [
+        0,
+        0
+      ],
+      "viewZoom": 1.0
+    }
+  },
+  "sequences": {
+    "items": [
+      {
+        "parameters": [
+          {
+            "value": 120.0,
+            "controlAddress": "/totalTime"
+          },
+          {
+            "value": 120.0,
+            "controlAddress": "/viewEndTime"
+          },
+          {
+            "value": "",
+            "controlAddress": "/ltcSyncModule",
+            "enabled": false
+          }
+        ],
+        "niceName": "StartShow",
+        "type": "Sequence",
+        "layers": {
+          "hideInEditor": true,
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": 60.0,
+                  "controlAddress": "/listSize"
+                }
+              ],
+              "niceName": "Trigger",
+              "type": "Trigger",
+              "triggers": {
+                "hideInEditor": true,
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": 0.0,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": 0.0,
+                        "controlAddress": "/flagY"
+                      }
+                    ],
+                    "niceName": "Explode TD",
+                    "type": "TimeTrigger",
+                    "consequences": {
+                      "viewOffset": [
+                        0,
+                        0
+                      ],
+                      "viewZoom": 1.0
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            }
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "cues": {
+          "hideInEditor": true,
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "editing": true
+      }
+    ],
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  },
+  "routers": {
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  }
+}
