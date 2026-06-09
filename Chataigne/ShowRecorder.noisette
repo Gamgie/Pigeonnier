@@ -71,7 +71,7 @@
                     {
                       "type": 0,
                       "width": 307,
-                      "height": 272,
+                      "height": 271,
                       "currentContent": "Custom Variables",
                       "tabs": [
                         {
@@ -83,7 +83,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 1173,
+                  "width": 1258,
                   "height": 570,
                   "currentContent": "State Machine",
                   "tabs": [
@@ -103,7 +103,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 428,
+                  "width": 343,
                   "height": 570,
                   "currentContent": "Inspector",
                   "tabs": [
@@ -133,7 +133,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 1256,
+                  "width": 1505,
                   "height": 412,
                   "currentContent": "Sequence Editor",
                   "tabs": [
@@ -144,7 +144,7 @@
                 },
                 {
                   "type": 0,
-                  "width": 474,
+                  "width": 225,
                   "height": 412,
                   "currentContent": "Logger",
                   "tabs": [
@@ -170,7 +170,7 @@
   "modules": {
     "items": [
       {
-        "niceName": "OSCQuery",
+        "niceName": "TD",
         "type": "OSCQuery",
         "scripts": {
           "viewOffset": [
@@ -228,14 +228,30 @@
         "values": {
           "containers": {
             "Particles_Long": {
+              "editorIsCollapsed": true,
               "containers": {
                 "Transform": {
                   "parameters": [
                     {
-                      "value": 1.0,
+                      "value": 0.0,
+                      "controlMode": 2,
+                      "reference": {
+                        "value": "/customVariables/tdSilhouetteParticle/variables/radialstrength/radialstrength",
+                        "controlAddress": "/reference"
+                      },
+                      "controlAddress": "/Radialstrength"
+                    },
+                    {
+                      "value": 0.0,
+                      "controlMode": 2,
+                      "reference": {
+                        "value": "/customVariables/tdSilhouetteParticle/variables/birthrate/birthrate",
+                        "controlAddress": "/reference"
+                      },
                       "controlAddress": "/Birthrate"
                     }
                   ],
+                  "editorIsCollapsed": true,
                   "owned": true,
                   "niceName": "Transform"
                 }
@@ -287,11 +303,11 @@
                       "DESCRIPTION": "Birthrate",
                       "FULL_PATH": "/Particles_Long/Transform/Birthrate",
                       "VALUE": [
-                        1000.0
+                        0.0
                       ],
                       "RANGE": [
                         {
-                          "MAX": 1.0,
+                          "MAX": 2000.0,
                           "MIN": 0.0
                         }
                       ],
@@ -310,6 +326,181 @@
           }
         },
         "hasListenExtension": true
+      },
+      {
+        "niceName": "Sound Card",
+        "type": "Sound Card",
+        "scripts": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "params": {
+          "containers": {
+            "inputVolumes": {
+            },
+            "outputVolumes": {
+              "editorIsCollapsed": true
+            },
+            "monitor": {
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ]
+            },
+            "fftAnalysis": {
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ],
+              "editorIsCollapsed": true,
+              "viewOffset": [
+                0,
+                0
+              ],
+              "viewZoom": 1.0
+            },
+            "ltc": {
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ]
+            }
+          }
+        },
+        "templates": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "analyzer": {
+          "parameters": [
+            {
+              "value": false,
+              "controlAddress": "/enabled"
+            }
+          ],
+          "editorIsCollapsed": true,
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        }
+      },
+      {
+        "parameters": [
+          {
+            "value": true,
+            "controlAddress": "/logIncoming"
+          }
+        ],
+        "niceName": "OSC",
+        "type": "OSC",
+        "scripts": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "params": {
+          "containers": {
+            "oscInput": {
+              "parameters": [
+                {
+                  "value": 13000,
+                  "hexMode": false,
+                  "controlAddress": "/localPort"
+                }
+              ]
+            },
+            "oscOutputs": {
+              "parameters": [
+                {
+                  "value": false,
+                  "controlAddress": "/enabled"
+                }
+              ],
+              "editorIsCollapsed": true,
+              "items": [
+                {
+                  "parameters": [
+                    {
+                      "value": "127.0.0.1",
+                      "controlAddress": "/remoteHost"
+                    }
+                  ],
+                  "niceName": "OSC Output",
+                  "type": "BaseItem"
+                }
+              ],
+              "viewOffset": [
+                0,
+                0
+              ],
+              "viewZoom": 1.0
+            },
+            "pass_through": {
+            }
+          }
+        },
+        "templates": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "values": {
+          "parameters": [
+            {
+              "value": 0,
+              "hexMode": false,
+              "controlAddress": "/_zone1_presence",
+              "type": "Integer",
+              "niceName": "/zone1/presence",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_zone1_presence"
+            },
+            {
+              "controlAddress": "/_zone1_slider",
+              "type": "Float",
+              "niceName": "/zone1/slider",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_zone1_slider"
+            },
+            {
+              "controlAddress": "/_zone1_xyPad",
+              "type": "Point2D",
+              "niceName": "/zone1/xyPad",
+              "customizable": true,
+              "removable": true,
+              "description": "",
+              "hideInEditor": false,
+              "feedbackOnly": false,
+              "shortName": "_zone1_xyPad"
+            }
+          ]
+        }
       }
     ],
     "viewOffset": [
@@ -319,6 +510,72 @@
     "viewZoom": 1.0
   },
   "customVariables": {
+    "items": [
+      {
+        "niceName": "TD Silhouette Particle",
+        "type": "CVGroup",
+        "params": {
+        },
+        "variables": {
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": 0.0,
+                  "minValue": 0.0,
+                  "maxValue": 2000.0,
+                  "default": 1.0,
+                  "controlAddress": "/birthrate",
+                  "feedbackOnly": false,
+                  "type": "Float",
+                  "niceName": "Birthrate",
+                  "customizable": true,
+                  "removable": false,
+                  "description": "Custom control of type Float",
+                  "hideInEditor": false
+                }
+              ],
+              "niceName": "Birthrate",
+              "editorIsCollapsed": true,
+              "type": "Float Parameter"
+            },
+            {
+              "parameters": [
+                {
+                  "value": 0.0,
+                  "minValue": -10.0,
+                  "maxValue": 10.0,
+                  "default": 0.0,
+                  "controlAddress": "/radialstrength",
+                  "feedbackOnly": false,
+                  "type": "Float",
+                  "niceName": "Radialstrength",
+                  "customizable": true,
+                  "removable": false,
+                  "description": "Custom control of type Float",
+                  "hideInEditor": false
+                }
+              ],
+              "niceName": "Radialstrength",
+              "editorIsCollapsed": true,
+              "type": "Float Parameter"
+            }
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "presets": {
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        }
+      }
+    ],
     "viewOffset": [
       0,
       0
@@ -326,6 +583,111 @@
     "viewZoom": 1.0
   },
   "states": {
+    "items": [
+      {
+        "parameters": [
+          {
+            "value": [
+              -215.0,
+              -110.0
+            ],
+            "controlAddress": "/viewUIPosition"
+          },
+          {
+            "value": true,
+            "controlAddress": "/active"
+          }
+        ],
+        "niceName": "State",
+        "type": "State",
+        "processors": {
+          "items": [
+            {
+              "niceName": "Action",
+              "editorIsCollapsed": true,
+              "type": "Action",
+              "conditions": {
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": "/modules/osc/values/_zone1_presence",
+                        "controlAddress": "/inputValue"
+                      }
+                    ],
+                    "niceName": "From Input Value",
+                    "type": "From Input Value",
+                    "comparator": {
+                      "parameters": [
+                        {
+                          "value": 1,
+                          "hexMode": false,
+                          "controlAddress": "/reference"
+                        }
+                      ],
+                      "hideInEditor": true
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequences": {
+                "parameters": [
+                  {
+                    "value": false,
+                    "controlAddress": "/cancelDelaysOnTrigger"
+                  }
+                ],
+                "items": [
+                  {
+                    "niceName": "Consequence",
+                    "type": "Consequence",
+                    "commandModule": "sequences",
+                    "commandPath": "Playback",
+                    "commandType": "Play Sequence",
+                    "command": {
+                      "parameters": [
+                        {
+                          "value": "/sequences/show",
+                          "controlAddress": "/target"
+                        },
+                        {
+                          "value": true,
+                          "controlAddress": "/playFromStart"
+                        }
+                      ],
+                      "paramLinks": {
+                      }
+                    }
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "consequencesOff": {
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              }
+            }
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        }
+      }
+    ],
     "viewOffset": [
       0,
       0
@@ -353,11 +715,11 @@
       {
         "parameters": [
           {
-            "value": 120.0,
+            "value": 145.88,
             "controlAddress": "/totalTime"
           },
           {
-            "value": 120.0,
+            "value": 145.8800048828125,
             "controlAddress": "/viewEndTime"
           },
           {
@@ -366,7 +728,7 @@
             "enabled": false
           }
         ],
-        "niceName": "StartShow",
+        "niceName": "Show",
         "type": "Sequence",
         "layers": {
           "hideInEditor": true,
@@ -390,13 +752,133 @@
                         "controlAddress": "/time"
                       },
                       {
-                        "value": 0.0,
+                        "value": 0.02500000037252903,
                         "controlAddress": "/flagY"
                       }
                     ],
                     "niceName": "Explode TD",
                     "type": "TimeTrigger",
                     "consequences": {
+                      "parameters": [
+                        {
+                          "value": false,
+                          "controlAddress": "/cancelDelaysOnTrigger"
+                        }
+                      ],
+                      "items": [
+                        {
+                          "niceName": "Consequence",
+                          "type": "Consequence",
+                          "commandModule": "customVariables",
+                          "commandPath": "",
+                          "commandType": "Set Value",
+                          "command": {
+                            "parameters": [
+                              {
+                                "value": "/tdSilhouetteParticle/birthrate",
+                                "controlAddress": "/target"
+                              },
+                              {
+                                "value": "All",
+                                "controlAddress": "/component"
+                              },
+                              {
+                                "value": "Equals",
+                                "controlAddress": "/operator"
+                              }
+                            ],
+                            "paramLinks": {
+                            }
+                          }
+                        },
+                        {
+                          "niceName": "Consequence 1",
+                          "type": "Consequence",
+                          "commandModule": "customVariables",
+                          "commandPath": "",
+                          "commandType": "Set Value",
+                          "command": {
+                            "parameters": [
+                              {
+                                "value": "/tdSilhouetteParticle/radialstrength",
+                                "controlAddress": "/target"
+                              },
+                              {
+                                "value": "All",
+                                "controlAddress": "/component"
+                              },
+                              {
+                                "value": "Equals",
+                                "controlAddress": "/operator"
+                              },
+                              {
+                                "value": 3.634860992431641,
+                                "controlAddress": "/value"
+                              }
+                            ],
+                            "paramLinks": {
+                            }
+                          }
+                        }
+                      ],
+                      "viewOffset": [
+                        0,
+                        0
+                      ],
+                      "viewZoom": 1.0
+                    }
+                  },
+                  {
+                    "parameters": [
+                      {
+                        "value": 0.2000001072883606,
+                        "controlAddress": "/time"
+                      },
+                      {
+                        "value": 0.4999999701976776,
+                        "controlAddress": "/flagY"
+                      }
+                    ],
+                    "niceName": "Explode TD 1",
+                    "type": "TimeTrigger",
+                    "consequences": {
+                      "parameters": [
+                        {
+                          "value": false,
+                          "controlAddress": "/cancelDelaysOnTrigger"
+                        }
+                      ],
+                      "items": [
+                        {
+                          "niceName": "Consequence 1",
+                          "type": "Consequence",
+                          "commandModule": "customVariables",
+                          "commandPath": "",
+                          "commandType": "Set Value",
+                          "command": {
+                            "parameters": [
+                              {
+                                "value": "/tdSilhouetteParticle/radialstrength",
+                                "controlAddress": "/target"
+                              },
+                              {
+                                "value": "All",
+                                "controlAddress": "/component"
+                              },
+                              {
+                                "value": "Equals",
+                                "controlAddress": "/operator"
+                              },
+                              {
+                                "value": 0.0,
+                                "controlAddress": "/value"
+                              }
+                            ],
+                            "paramLinks": {
+                            }
+                          }
+                        }
+                      ],
                       "viewOffset": [
                         0,
                         0
@@ -411,6 +893,55 @@
                 ],
                 "viewZoom": 1.0
               }
+            },
+            {
+              "parameters": [
+                {
+                  "value": 80.0,
+                  "controlAddress": "/listSize"
+                },
+                {
+                  "value": 80,
+                  "hexMode": false,
+                  "controlAddress": "/uiHeight"
+                }
+              ],
+              "niceName": "Audio",
+              "type": "Audio",
+              "clips": {
+                "hideInEditor": true,
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": "D:/Gamgie/Projets/Pigeonnier/Sounds/show_V2.wav",
+                        "controlAddress": "/filePath"
+                      }
+                    ],
+                    "niceName": "AudioClip",
+                    "editorIsCollapsed": true,
+                    "type": "AudioClip"
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "channels": {
+                "parameters": [
+                  {
+                    "value": true,
+                    "controlAddress": "/channel1Left"
+                  },
+                  {
+                    "value": true,
+                    "controlAddress": "/channel2Right"
+                  }
+                ]
+              },
+              "audioModule": "soundCard"
             }
           ],
           "viewOffset": [
@@ -428,6 +959,92 @@
           "viewZoom": 1.0
         },
         "editing": true
+      },
+      {
+        "parameters": [
+          {
+            "value": 129.26,
+            "controlAddress": "/totalTime"
+          },
+          {
+            "value": "",
+            "controlAddress": "/ltcSyncModule",
+            "enabled": false
+          }
+        ],
+        "niceName": "Idle",
+        "type": "Sequence",
+        "layers": {
+          "hideInEditor": true,
+          "items": [
+            {
+              "parameters": [
+                {
+                  "value": 80.0,
+                  "controlAddress": "/listSize"
+                },
+                {
+                  "value": 80,
+                  "hexMode": false,
+                  "controlAddress": "/uiHeight"
+                }
+              ],
+              "niceName": "Audio",
+              "type": "Audio",
+              "clips": {
+                "hideInEditor": true,
+                "items": [
+                  {
+                    "parameters": [
+                      {
+                        "value": 0.0,
+                        "controlAddress": "/startTime"
+                      },
+                      {
+                        "value": "D:/Gamgie/Projets/Pigeonnier/Sounds/idle_background.wav",
+                        "controlAddress": "/filePath"
+                      }
+                    ],
+                    "niceName": "AudioClip",
+                    "editorIsCollapsed": true,
+                    "type": "AudioClip"
+                  }
+                ],
+                "viewOffset": [
+                  0,
+                  0
+                ],
+                "viewZoom": 1.0
+              },
+              "channels": {
+                "parameters": [
+                  {
+                    "value": true,
+                    "controlAddress": "/channel1Left"
+                  },
+                  {
+                    "value": true,
+                    "controlAddress": "/channel2Right"
+                  }
+                ]
+              },
+              "audioModule": "soundCard"
+            }
+          ],
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        },
+        "cues": {
+          "hideInEditor": true,
+          "viewOffset": [
+            0,
+            0
+          ],
+          "viewZoom": 1.0
+        }
       }
     ],
     "viewOffset": [
