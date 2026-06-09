@@ -1372,6 +1372,27 @@
                             "paramLinks": {
                             }
                           }
+                        },
+                        {
+                          "niceName": "Consequence 1",
+                          "type": "Consequence",
+                          "commandModule": "sequences",
+                          "commandPath": "Audio",
+                          "commandType": "Set Layer Volume",
+                          "command": {
+                            "parameters": [
+                              {
+                                "value": "/sequences/idle/layers/audio",
+                                "controlAddress": "/target"
+                              },
+                              {
+                                "value": 10.0,
+                                "controlAddress": "/time"
+                              }
+                            ],
+                            "paramLinks": {
+                            }
+                          }
                         }
                       ],
                       "viewOffset": [
@@ -1524,6 +1545,7 @@
                       "items": [
                         {
                           "niceName": "Birthrate raise",
+                          "editorIsCollapsed": true,
                           "type": "Consequence",
                           "commandModule": "customVariables",
                           "commandPath": "",
@@ -1642,6 +1664,7 @@
                         },
                         {
                           "niceName": "particle size silhouete",
+                          "editorIsCollapsed": true,
                           "type": "Consequence",
                           "commandModule": "customVariables",
                           "commandPath": "",
@@ -1754,27 +1777,6 @@
                                 "viewZoom": 1.0
                               }
                             },
-                            "paramLinks": {
-                            }
-                          }
-                        },
-                        {
-                          "niceName": "Fade In Volume",
-                          "type": "Consequence",
-                          "commandModule": "sequences",
-                          "commandPath": "Audio",
-                          "commandType": "Set Layer Volume",
-                          "command": {
-                            "parameters": [
-                              {
-                                "value": "/sequences/idle/layers/audio",
-                                "controlAddress": "/target"
-                              },
-                              {
-                                "value": 10.0,
-                                "controlAddress": "/time"
-                              }
-                            ],
                             "paramLinks": {
                             }
                           }
